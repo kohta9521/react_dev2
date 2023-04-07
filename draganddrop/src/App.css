@@ -1,8 +1,8 @@
 .dragDropArea {
+  margin: 50px auto;
   text-align: center;
-  margin: 50px;
-  width: 500px;
-  border: 1px solid black;
+  width: 800px;
+  background-color: #ccff99;
 }
 
 .item {
@@ -10,5 +10,5 @@
   font-size: 70px;
   width: 400px;
   border: 1px solid black;
-  margin: 0 auto;
+  margin: 30px auto;
 }
