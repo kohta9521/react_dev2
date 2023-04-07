@@ -1,10 +1,11 @@
+import { DragDropContext } from "react-beautiful-dnd";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello sample code</h1>
-    </div>
+    <>
+      <DragDropContext></DragDropContext>
+    </>
   );
 }
 
