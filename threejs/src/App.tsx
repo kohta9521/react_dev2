@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, Box } from '@react-three/drei';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-          <h1 className="text-3xl font-bold underline bg-red-500">
-      Hello world!
-    </h1>
+    <div className="w-full h-screen">
+      <Canvas> 
+        {/* <ambientLight intensity={0.1} />
+        <directionalLight color="white" position={[0, 8, 5]} /> */}
+        <mesh>
+          <boxGeometry args={[2, 2, 2]} />
+          <meshStandardMaterial color="green" />
+        </mesh>
+        <Box>
+          <meshStandardMaterial color="red" />
+        </Box>
+        <OrbitControls enableZoom={false} />
+      </Canvas>
     </div>
   )
 }
