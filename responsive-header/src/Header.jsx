@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from "react";
+
+import { AppBar, Toolbar } from "@mui/material";
+import React from "react";
 
 export default function Header() {
-  const [ state, setState ] = useState({
-    mobileView: false,
-  });
+  const displayDesktop = () => {
+    return <Toolbar>Hi From Desktop Header</Toolbar>
+  };
 
-  const { mobileView } = state;
-
-  useEffect(() => {
-    const setResponsiveness = () => {
-      return window.innerWidth < 900
-      ? setState((prevState) => ({ ...prevState, mobileView: true }))
-      :  setState((prevState) => ({ ...prevState, mobileView: false}));
-    };
-
-    setResponsiveness();
-    window.addEventListener("resize", () => setResponsiveness());
-
-    return () => {
-      window.removeEventListener("resize", () => setResponsiveness());
-    }
-  })
-  
+  return (
+    <header>
+      <AppBar>
+        {displayDesktop()}
+      </AppBar>
+    </header>
+  );
 }
